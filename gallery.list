@@ -1,0 +1,79 @@
+<!--This is styling for the download text-->
+<style>
+.image-download-link a {
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0 70px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.image-download-link a:hover {
+  color:#666;
+}
+</style>
+
+<div id="thumbList" class="thumb-list clear">
+{.repeated section items}
+<span class="thumb" data-slide-id="{id}">
+  <img data-load="false" {@|image-meta}/>
+
+<!-- Hiding the Thumbnail title over Hover -->
+<!-- <div class="thumb-title">{title}</div> -->
+
+</span>
+{.end}
+</div>
+
+<div id="galleryWrapper">
+  <div id="slideshowWrapper">
+    <div id="slideshow">
+      {.repeated section items}
+        <div class="slide" data-slide-id="{id}" data-slide-url="{urlId}">
+          {.image?}<img {@|image-meta} data-load="false" />{.end}
+          {.video?}{@|video}{.end}
+          {.if title || body}
+          <div class="image-description">
+            {.section title}<strong>{@}</strong>{.end}{.section body}<span>{@|safe}</span>{.end}
+          </div>
+          {.end}
+
+          <!--Adds the download link for each image.  Replace the first # below with your public folder URL. -->
+          {.section title}
+          <div class="image-download-link">
+             <a href="#?dl=0#lh:null-{@}" target="_blank">Click to Download High-Quality Version</a>
+            </div>
+          {.end}
+
+        </div>
+      {.end}
+    </div>
+
+    <div id="imageInfoToggle"><i></i><span>info</span></div>
+  </div>
+
+  <div id="simpleControls">
+      <span class="control prev-slide">prev</span> / <span class="control next-slide">next</span>
+  </div>
+
+  <div id="numberControls" class="gallery-controls">
+    {.repeated section items}
+      <span class="number">{@index}</span>
+    {.end}
+  </div>
+
+  <div id="dotControls" class="gallery-controls">
+    {.repeated section items}
+      <span class="dot">&middot;</span>
+    {.end}
+  </div>
+
+  <div id="tinyThumbControls" class="gallery-controls">
+    {.repeated section items}
+      <span class="tiny-thumb"><img src="{assetUrl}?format=150w" height="30" /></span>
+    {.end}
+  </div>
+</div>
