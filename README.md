@@ -9,20 +9,6 @@ You can have multiple folders in the Squarespace Apps folder to help organize yo
 
 You can only have 1 public folder for download, so you will need to upload all of your downloadable images to this public folder.
 
-
-#IMPORTANT
-Save/backup your template files to your computer before you make any modifications! You can use git clone or login via SFTP and save your template files by dragging and dropping them to a folder on your computer.  For more information on how to connect to your Squarespace Developer Site see here:
-
-http://developers.squarespace.com/initial-setup
-
-
-##What you'll need
-- Dropbox account with a Folder for your images and a public/shared folder for the images to be downloaded.
-- Squarespace Account with Developer Mode Enabled
-- Wexley Template installed
-- SFTP Client and Program to edit html/css/json (recommend Cyberduck and Sublime text or Coda 2)
-
-
 ##Example
 Let's say you are a photographer shooting a 3 day conference.  You can organize your photos by days, so you'll want to create 3 folders for Squarespace:
 
@@ -35,11 +21,18 @@ You want users to be able to download them (i.e. press, magazine, etc) and you n
 All files in the shared folder must have the same name as in their respected Squarespace folders.  This is because of the way the 'Download' text is linked with JSONT.  It replaces the end of the shared folder url with the title of the image.  So if you have image1.jpg inside of Folder 1, then you need to have image1.jpg inside of the shared folder.
 
 
-##Troubleshooting tips & tricks
-- If there is no Folder with your account name, you will need to create this as described when you first connect your account.  
-- Each folder you create and fill with images will become it's own gallery page in Squarespace.
-- Images that you use for your Dropbox folder to display and offer as a download MUST have the SAME NAME.
-- If you want to modify the text, edit the CSS at the top of the gallery.list file.
+
+##What You'll Need
+- Dropbox account with a Folder for your images and a public/shared folder for the images to be downloaded.
+- Squarespace Account with Developer Mode Enabled
+- Wexley Template installed
+- SFTP Client and Program to edit html/css/json (recommend Cyberduck and Sublime text or Coda 2)
+
+
+#IMPORTANT
+Save/backup your template files to your computer before you make any modifications! You can use git clone or login via SFTP and save your template files by dragging and dropping them to a folder on your computer.  For more information on how to connect to your Squarespace Developer Site see here:
+
+http://developers.squarespace.com/initial-setup
 
 
 #Instructions
@@ -63,6 +56,12 @@ Part 2 - Adding the download text to the gallery pages
 
 Part 3 - Upload the gallery.list
 - Connect to the Developer Platform via SFTP
- - Open the Collections folder and replace the gallery.list file with the new gallery.list you just updated 
+- Open the Collections folder and replace the gallery.list file with the new gallery.list you just updated 
 - Save and make sure this file is updated to SFTP.  Refresh your browser, click on an image in your gallery to display image in lightbox and you'll see 'Click to Download High-Quality Version' below the image.  This link should then link to the image placed in your Shared/Public folder.
 
+
+##Troubleshooting Tips & Tricks
+- If there is no Folder with your account name, you will need to create this as described when you first connect your account.  
+- Each folder you create and fill with images will become it's own gallery page in Squarespace.
+- Images that you use for your Dropbox folder to display and offer as a download MUST have the SAME NAME.
+- If you want to modify the text, edit the CSS at the top of the gallery.list file.
